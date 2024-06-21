@@ -31,7 +31,8 @@ useEffect(()=>{
 
   cardsRef.current.addEventListener('wheel',handleWheel)
 },[])
-  return (
+  
+return (
     <div className='title-cards'>
       <h2>{title?title:"Popular on Netflix"}</h2>
       <div className="card-list" ref={cardsRef}>
