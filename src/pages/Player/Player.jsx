@@ -22,7 +22,7 @@ const Player = () => {
   useEffect(()=>{
     fetch('https://api.themoviedb.org/3/movie/1022789/videos?language=en-US', options)
     .then(response => response.json())
-    .then(response => console.log(response))
+    .then(response => setApiData(response.results[0]))
     .catch(err => console.error(err));
   },[])
 
@@ -31,9 +31,9 @@ const Player = () => {
       <img src={back_arrow_icon} alt="" />
       <iframe width='90%' height='90%' src='https://www.youtube.com/embed/YQQD67N5pi0&t=6423s&ab_channel=GreatStack' title='trailer' frameborder="0" allowFullScreen></iframe>
       <div className="player-info">
-        <p>Published Date</p>
-        <p>Name</p>
-        <p>Type</p>
+        <p>apiData.published_at</p>
+        <p>apiData.name</p>
+        <p>apiData.type</p>
       </div>
     </div>
   )
